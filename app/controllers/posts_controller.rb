@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(username: params[:username], email: params[:email], password: params[:password])
+    @post = Post.new(title: params[:username], body: params[:email])
 
     if @post.save
       redirect_to root_path
