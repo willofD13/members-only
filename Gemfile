@@ -68,3 +68,4 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem 'responders', '~> 3.1', '>= 3.1.1'
