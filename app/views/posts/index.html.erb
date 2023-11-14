@@ -9,4 +9,9 @@
     <% end %>
 </ul>
 
-<%= link_to "Sign up", new_user_path %>
+<ul>
+    <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <li><%= link_to "log in", new_user_session_path %></li>
+    <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+    <!--<%= link_to "", new_user_registration_path %>-->
+</ul>
