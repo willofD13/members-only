@@ -5,7 +5,7 @@
     <li>
         <h3> Author </h3>
         <%if user_signed_in? %>
-        <div><%= post.user_id %></div>
+        <div><%= post.user.username%></div>
         <% end %>
         <h3> Title </h3>
         <div> <%= post.title %> </div>
