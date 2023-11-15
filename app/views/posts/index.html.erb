@@ -3,11 +3,14 @@
 <ul>
     <% @posts.each do |post|%>
     <li>
-        <div> <%= post.title %> </div>
-        <div> <%= post.body %> </div>
+        <h3> Author </h3>
         <%if user_signed_in? %>
         <div><%= post.user_id %></div>
         <% end %>
+        <h3> Title </h3>
+        <div> <%= post.title %> </div>
+        <h3> Body </h3>
+        <div> <%= post.body %> </div>
     </li>
     <% end %>
 </ul>
