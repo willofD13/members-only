@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to root, status: :see_other
+      redirect_to root_path, status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
