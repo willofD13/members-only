@@ -19,6 +19,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find_by(:id)
+  end
+
+  def update
+    @post = Post.find_by(:id)
+
+    if @post.update(post_params)
+      redirect_to posts_path
+    else
+      render :update, status: :unprocessable_entity
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title,:body,:user_id)
