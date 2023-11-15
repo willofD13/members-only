@@ -5,6 +5,9 @@
     <li>
         <div> <%= post.title %> </div>
         <div> <%= post.body %> </div>
+        <%if user_signed_in? %>
+        <div><%= post.user_id %></div>
+        <% end %>
     </li>
     <% end %>
 </ul>
