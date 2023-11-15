@@ -4,15 +4,15 @@
 <div>
     <%= f.label :title %><br>
     <%= f.text_field :title%>
-    <% @user.errors.full_messages_for(:title).each do |message|%>
+    <% @post.errors.full_messages_for(:title).each do |message|%>
     <div> <%= message %> </div>
     <% end %>
 </div>
 
 <div>
     <%= f.label :body %><br>
-    <%= f.email_field :body %>
-    <% @user.errors.full_messages_for(:body).each do |message| %>
+    <%= f.text_field :body %>
+    <% @post.errors.full_messages_for(:body).each do |message| %>
     <div><%= message %></div>
     <% end %>
 </div>
