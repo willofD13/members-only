@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_signin, only: [:new,:create]
+  before_action :authenticate_user!, only: [:new,:create]
 
   def index
     @posts = Post.all
@@ -24,6 +24,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title,:body,:user_id)
   end
 
-  def require_signin
-  end
 end
