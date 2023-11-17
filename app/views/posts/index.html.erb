@@ -12,7 +12,9 @@
         <h3> Body </h3>
         <div> <%= post.body %> </div><br>
         <%if user_signed_in? && post.user_id == current_user.id %>
-            <%=link_to "Edit post", edit_post_path(post.id)%>
+            <div><%=link_to "Edit post", edit_post_path(post.id)%></div>
+            <div><%= link_to "Delete post", post_path(post), data: {turbo_method: "delete",
+                                                               turbo_confirm: "Are you sure?"} %></div>
         <% end %>
     </li>
     <% end %>
