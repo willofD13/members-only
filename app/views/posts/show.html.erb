@@ -3,10 +3,6 @@
 <h2> Text </h2>
 <div><%= @post.body %></div>
 <h2> Comments </h2>
-<div><% @post.comments.each do |c|%>
-        <strong><%= "#{c.user.username}:" %></strong>
-        <div><%= c.body %></div>
-    <% end %>
-</div>
+<div><%= render @post.comments%></div>
 <%= render "comments/form"%><br>
 <%= link_to "Back to home page", root_path%>
