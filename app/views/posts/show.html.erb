@@ -6,7 +6,6 @@
 <%= form_with model: [@post,@post.comments.build] do |f| %>
 <div>
     <%= f.text_area :body, size: "50x5" %>
-    <% end %>
 </div>
 <%= f.submit %>
 <% end %>
