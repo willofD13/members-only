@@ -2,13 +2,9 @@
 <div><%= @post.title%></div>
 <h2> Text </h2>
 <div><%= @post.body %></div>
-<h3> Add a comment </h3>
-<%= form_with model: [@post,@post.comments.build] do |f| %>
-<div>
-    <%= f.text_area :body, size: "50x5" %>
+<h2> Comments </h2>
+<div><% @post.comments.each do |c|%>
+        <div><%= c.body %></div>
+    <% end %>
 </div>
-<div>
-    <%= f.hidden_field :user_id, value: "#{current_user.id}" %>
-</div>
-<%= f.submit %>
-<% end %>
+<%= render "comments/form"%>
