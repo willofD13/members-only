@@ -1,4 +1,11 @@
-<h3> Title </h3>
+<h2> Title </h2>
 <div><%= @post.title%></div>
-<h3> Text </h3>
+<h2> Text </h2>
 <div><%= @post.body %></div>
+<h3> Add a comment </h3>
+<%= form_with model: [@post,@post.comments.build] do |f| %>
+<div>
+    <%= f.text_area :body, size: "50x5" %>
+    <% end %>
+</div>
+<% end %>
