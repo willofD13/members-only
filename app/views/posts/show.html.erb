@@ -4,7 +4,9 @@
 <div><%= @post.body %></div>
 <h2> Comments </h2>
 <div><% @post.comments.each do |c|%>
+        <div><%= "#{c.user.username}:" %></div>
         <div><%= c.body %></div>
     <% end %>
 </div>
-<%= render "comments/form"%>
+<%= render "comments/form"%><br>
+<%= link_to "Back to home page", root_path%>
